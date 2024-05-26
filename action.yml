@@ -1,0 +1,39 @@
+# action.yml
+name: 'AppCD: Generative IAC'
+description: 'Generate IAC from the code'
+inputs:
+  cloud:
+    description: 'Cloud provider'
+    required: false
+    default: 'aws'
+  language:
+    description: 'Programming language: Supports Java/Python'
+    required: false
+    default: 'Python'
+  outputDir:
+    description: 'Output directory'
+    required: false
+    default: './iac'
+  scanPath:
+    description: 'Path to scan'
+    required: false
+    default: '.'
+  targetCompute:
+    description: 'Target compute'
+    required: false
+    default: 'k8s'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - generate 
+    - --lang 
+    - ${{ inputs.language }}
+    - --cloud
+    - ${{ inputs.cloud }}
+    - --output
+    - ${{ inputs.outputDir }}
+    - --scanpath
+    - ${{ inputs.scanPath }}
+    - --deployment-type
+    - ${{ inputs.targetCompute }}
