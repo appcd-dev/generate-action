@@ -2,6 +2,14 @@
 
 This repository contains the reusable action for the AppCD Generative IAC.
 
+## Setup
+
+Please follow the steps below to setup the action:
+
+1. Signup for an account on [AppCD](https://cloud.appcd.io/)
+2. Setup a Personal Access Token on [AppCD](https://cloud.appcd.io/account-settings/pat/)
+3. Add the Personal Access Token as a secret in your repository with the name `APPCD_TOKEN`
+
 ## Inputs
 
 | Name         | Description                       | Required | Default   |
@@ -18,6 +26,8 @@ This repository contains the reusable action for the AppCD Generative IAC.
 ```yaml
 - name: Generate IAC
   uses: appcd-dev/action@v0
+  env:
+    APPCD_TOKEN: ${{ secrets.APPCD_TOKEN }}
   with:
     # Required inputs
     ## Cloud provider: aws, azure
