@@ -22,6 +22,10 @@ inputs:
     description: 'Target compute'
     required: false
     default: 'k8s'
+  enableDebug:
+    description: 'Enable debug, Set to true for debug logs, Better if combined with ACTIONS_RUNNER_DEBUG'
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -39,4 +43,4 @@ runs:
     - ${{ inputs.targetCompute }}
     - --log
     # based on ACTIONS_RUNNER_DEBUG, set to 2 for debug
-    - ${{ runner.os == 'Linux' && env.ACTIONS_RUNNER_DEBUG == 'true' && '2' || '3' }}
+    - ${{ inputs.enableDebug == 'true' && '2' || '3' }}
