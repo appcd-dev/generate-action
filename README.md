@@ -1,13 +1,13 @@
-# AppCD Generative IAC
+# appCD Generative IAC
 
-This repository contains the reusable action for the AppCD Generative IAC.
+This repository contains the reusable action for the appCD Generative IAC.
 
 ## Setup
 
 Please follow the steps below to setup the action:
 
-1. Signup for an account on [AppCD](https://cloud.appcd.io/)
-2. Setup a Personal Access Token on [AppCD](https://cloud.appcd.io/account-settings/pat/)
+1. Signup for an account on [appCD](https://cloud.appcd.io/)
+2. Setup a Personal Access Token on [appCD](https://cloud.appcd.io/account-settings/pat/)
 3. Add the Personal Access Token as a secret in your repository with the name `APPCD_TOKEN`
 
 ## Inputs
@@ -45,7 +45,7 @@ Please follow the steps below to setup the action:
     ## Target compute: k8s, ecs
     ## Default: k8s
     targetCompute: 'k8s'
-    ## Cleanup: true, false: Cleanup the appcd mothership after the action
+    ## Cleanup: true, false: Cleanup the appCD mothership after the action
     ## Default: true
     cleanup: 'true'
 ```
