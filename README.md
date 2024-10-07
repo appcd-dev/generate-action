@@ -1,14 +1,14 @@
-# appCD Generative IAC
+# StackGen Generative IAC
 
-This repository contains the reusable action for the appCD Generative IAC.
+This repository contains the reusable action for the StackGen Generative IAC.
 
 ## Setup
 
 Please follow the steps below to setup the action:
 
-1. Signup for an account on [appCD](https://cloud.stackgen.com/)
-2. Setup a Personal Access Token on [appCD](https://cloud.stackgen.com/account-settings/pat/)
-3. Add the Personal Access Token as a secret in your repository with the name `APPCD_TOKEN`
+1. Signup for an account on [StackGen](https://cloud.stackgen.com/)
+2. Setup a Personal Access Token on [StackGen](https://cloud.stackgen.com/account-settings/pat/)
+3. Add the Personal Access Token as a secret in your repository with the name `STACKGEN_TOKEN`
 
 ## Inputs
 
@@ -25,9 +25,9 @@ Please follow the steps below to setup the action:
 
 ```yaml
 - name: Generate IAC
-  uses: appcd-dev/action@v0
+  uses: stackgen-dev/action@v0
   env:
-    APPCD_TOKEN: ${{ secrets.APPCD_TOKEN }}
+    STACKGEN_TOKEN: ${{ secrets.STACKGEN_TOKEN }}
   with:
     # Required inputs
     ## Cloud provider: aws, azure
@@ -45,7 +45,7 @@ Please follow the steps below to setup the action:
     ## Target compute: k8s, ecs
     ## Default: k8s
     targetCompute: 'k8s'
-    ## Cleanup: true, false: Cleanup the appCD mothership after the action
+    ## Cleanup: true, false: Cleanup the stackgen mothership after the action
     ## Default: true
     cleanup: 'true'
 ```
