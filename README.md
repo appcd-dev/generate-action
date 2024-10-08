@@ -25,7 +25,7 @@ Please follow the steps below to setup the action:
 
 ```yaml
 - name: Generate IAC
-  uses: stackgen-dev/action@v0
+  uses: appcd-dev/action@v0
   env:
     STACKGEN_TOKEN: ${{ secrets.STACKGEN_TOKEN }}
   with:
