@@ -1,3 +1,3 @@
-FROM ghcr.io/appcd-dev/appcd-dist/appcd-cli:latest
+FROM ghcr.io/appcd-dev/appcd-dist/stackgen-cli:latest
 
-ENTRYPOINT ["/usr/bin/appcd"]
+ENTRYPOINT ["/usr/bin/stackgen"]
